@@ -48,7 +48,7 @@
                         @foreach ($data as $d)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td><img src="{{ asset('storage/photo-user/'.$d->image) }}" alt=""></td>
+                            <td><img src="{{ asset('storage/photo-user/'.$d->image) }}" alt="" width=""></td>
                             <td>{{ $d->name }}</td>
                             <td>{{ $d->email }}</td>
                             <td>
