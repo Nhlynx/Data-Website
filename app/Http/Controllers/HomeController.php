@@ -70,13 +70,19 @@ class HomeController extends Controller
 
     public function update(Request $request,$id){
         $validator = Validator::make($request->all(),[
-            'photo'=> 'required|mimes:,jpeg|max:2048',
+            'photo'=> 'required|mimes:png,jpg,jpeg|max:2048',
             'nama'=> 'required',
             'email'=> 'required|email',
             'password'=> 'nullable',
        ]);
 
        if($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+       $photo = $request->file('photo');
+       $filename = date('Y-m-d').$photo->getClientOriginalName();
+       $path = 'photo-user/'.$filename;
+
+       Storage::disk('public')->put($path,file_get_contents($photo));
 
        $data['name'] = $request->nama;
        $data['email'] = $request->email;
