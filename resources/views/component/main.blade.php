@@ -230,6 +230,24 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('admin.clientside') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Client Side
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.serverside') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Server Side
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
